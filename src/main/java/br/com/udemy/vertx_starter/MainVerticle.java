@@ -7,16 +7,14 @@ import io.vertx.core.Vertx;
 public class MainVerticle extends AbstractVerticle {
 
   public static void main(String[] args) {
-    var vertx= Vertx.vertx();
+    var vertx = Vertx.vertx();
     vertx.deployVerticle(new MainVerticle());
   }
 
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
     vertx.createHttpServer().requestHandler(req -> {
-      req.response()
-        .putHeader("content-type", "text/html; charset=utf-8")
-        .end("Olá Mundo!");
+      req.response().putHeader("content-type", "text/html; charset=utf-8").end("Olá Mundo!");
     }).listen(9000, http -> {
       if (http.succeeded()) {
         startPromise.complete();
