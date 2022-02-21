@@ -1,4 +1,4 @@
-package br.com.udemy.vertx_starter;
+package br.com.curso.home.starter;
 
 import io.vertx.core.Vertx;
 import io.vertx.junit5.VertxExtension;
